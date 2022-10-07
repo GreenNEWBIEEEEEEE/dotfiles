@@ -18,8 +18,8 @@ function initial()
     ScriptLocation="$ScriptLocation/Git"
 }
 
-git_email="wildfootw@wildfoo.tw"
-git_name="WildfootW"
+git_email="adsl53102@gmail.com"
+git_name="RCQQYY"
 
 echo "set git environment settings..."
 git config --global user.email $git_email
