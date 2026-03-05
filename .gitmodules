@@ -4,3 +4,4 @@
 [submodule "Tmux/oh-my-tmux"]
 	path = Tmux/oh-my-tmux
 	url = https://github.com/GreenNEWBIEEEEEEE/oh-my-tmux.git
+	branch = master
