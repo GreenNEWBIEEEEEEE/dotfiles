@@ -9,8 +9,8 @@ CurrentUser=$1
 HomeDirectory=$2
 ScriptLocation=$3  # root folder setup.sh location
 
-git_email="wildfootw@wildfoo.tw"
-git_name="WildfootW"
+git_email="adsl53102@gmail.com"
+git_name="GreenNewbie"
 
 function initial()
 {

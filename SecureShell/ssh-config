@@ -1,16 +1,10 @@
-#Host github.com
-#    User wildfootw
-#    HostName github.com
-#    IdentityFile ~/.ssh/GitHub
-Host wildfoo.tw
-    HostName wildfoo.tw
-    Port 29777
-    User wildfootw
-    IdentitiesOnly yes
-    IdentityFile ~/.ssh/wildfootw@wildfoo.tw
-Host common.wildfoo.tw
-    HostName wildfoo.tw
-    Port 29777
-    User common
-    IdentitiesOnly yes
-    IdentityFile ~/.ssh/common@wildfoo.tw
+Host github.com
+    User greennewbie
+    HostName github.com
+    IdentityFile ~/.ssh/GitHub
+# Host hostAlias.com
+#     HostName example.com
+#     Port 7777
+#     User greennewbie
+#     IdentitiesOnly yes
+#     IdentityFile ~/.ssh/path

@@ -135,7 +135,7 @@ let g:tagbar_iconchars = ['↠', '↡']
 
 """ Template
 let g:templates_directory = ['~/dotfiles/Templates']
-let g:email = "wildfootw@wildfoo.tw"
+let g:email = "adsl53102@gmail.com"
 
 """ gitgutter
 let g:gitgutter_sign_added = '+'
