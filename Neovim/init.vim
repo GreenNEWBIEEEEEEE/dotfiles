@@ -148,6 +148,7 @@ let g:fzf_colors =
 lua << EOF
 require("nvim-tree").setup()
 EOF
+nnoremap <leader>b :NvimTreeToggle<CR>
 
 """ Telescope
 nnoremap <leader>f <cmd>Telescope find_files<cr>
@@ -225,8 +226,7 @@ nmap <leader>a gaip*
 "nmap <leader>s <C-w>s<C-w>j:terminal<CR>
 "nmap <leader>vs <C-w>v<C-w>l:terminal<CR>
 nmap <leader>d <Plug>(pydocstring)
-nmap <leader>f :Files<CR>
-nmap <leader>g :Goyo<CR>
+"nmap <leader>g :Goyo<CR>
 nmap <leader>h :RainbowParentheses!!<CR>
 nmap <leader>j :set filetype=journal<CR>
 nmap <leader>k :ColorToggle<CR>
@@ -237,4 +237,7 @@ autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/venv/bin/python -m ya
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
-
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gr <Plug>(coc-references)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
