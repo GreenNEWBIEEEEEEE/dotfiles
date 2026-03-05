@@ -28,11 +28,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
-Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'alvan/vim-closetag'
@@ -45,11 +41,14 @@ Plug 'chrisbra/Colorizer'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'vim-scripts/loremipsum'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'aperezdc/vim-template'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }   
 
 "" Entertainment
 "Plug 'ryanss/vim-hackernews'
@@ -88,11 +87,6 @@ set title
 
 " Plugin Configurations
 
-""" NERDTree
-let NERDTreeShowHidden=1
-let g:NERDTreeDirArrowExpandable = '↠'
-let g:NERDTreeDirArrowCollapsible = '↡'
-
 """ Airline
 let g:airline_powerline_fonts = 1
 let g:airline_section_warning = ''
@@ -105,21 +99,8 @@ tmap <C-w> <Esc><C-w>
 autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
-""" Deoplete
-let g:deoplete#enable_at_startup = 1
-" Disable documentation window
-set completeopt-=preview
-
 """ vim-pydocstring
 let g:pydocstring_doq_path = '~/.config/nvim/venv/bin/doq'
-
-""" Supertab
-let g:SuperTabDefaultCompletionType = "<C-n>"
-
-""" Ultisnips
-let g:UltiSnipsExpandTrigger="<C-Space>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-x>"
 
 """ EasyAlign
 xmap ga <Plug>(EasyAlign)
@@ -162,6 +143,15 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+""" nvim-tree
+lua << EOF
+require("nvim-tree").setup()
+EOF
+
+""" Telescope
+nnoremap <leader>f <cmd>Telescope find_files<cr>
+nnoremap <leader>s <cmd>Telescope live_grep<cr>
 
 " Filetype-Specific Configurations
 
@@ -220,7 +210,6 @@ endfunction
 " Custom Mappings
 
 let mapleader=","
-nmap <leader>q :NERDTreeToggle<CR>
 nmap <leader>w :TagbarToggle<CR>
 nmap \ <leader>w <leader>q
 nmap <leader>ee :Colors<CR>

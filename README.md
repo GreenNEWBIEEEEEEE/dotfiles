@@ -14,8 +14,12 @@ sudo apt install git zsh vim tmux
 ### Neovim
 ```
 sudo add-apt-repository ppa:neovim-ppa/stable
+
+# For coc.nvim plugin
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+
 sudo apt-get update
-sudo apt install neovim python3 python3-pip python3-venv git curl exuberant-ctags -y
+sudo apt install neovim nodejs ripgrep python3 python3-pip python3-venv git curl exuberant-ctags -y
 ```
 
 ### Git Clone
