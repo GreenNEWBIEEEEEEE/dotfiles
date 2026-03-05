@@ -25,10 +25,10 @@ change the "$git_name" and "$git_email" in install.sh (and more)
 cd ~
 mkdir Programfile
 cd ./Programfile
-git clone https://github.com/WildfootW/dotfiles.git
+git clone https://github.com/GreenNEWBIEEEEEEE/dotfiles.git
 cd ./dotfiles
 ./setup.sh
-git remote set-url origin git@github.com:WildfootW/dotfiles.git
+git remote set-url origin git@github.com:GreenNEWBIEEEEEEE/dotfiles.git
 ```
 
 ## Other
