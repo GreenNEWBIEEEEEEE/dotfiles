@@ -1,5 +1,3 @@
-" Optixal's Neovim Init.vim
-
 " Vim-Plug
 call plug#begin()
 
@@ -48,7 +46,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }   
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 "" Entertainment
 "Plug 'ryanss/vim-hackernews'
@@ -150,6 +149,17 @@ require("nvim-tree").setup()
 EOF
 nnoremap <leader>b :NvimTreeToggle<CR>
 
+""" treesitter
+"lua << EOF
+"require'nvim-treesitter.configs'.setup {
+"  ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc" },
+"  highlight = {
+"    enable = true,
+"    additional_vim_regex_highlighting = false,
+"  },
+"}
+"EOF
+
 """ Telescope
 nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>s <cmd>Telescope live_grep<cr>
@@ -241,3 +251,19 @@ nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>qf <Plug>(coc-fix-current)
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" neovim v0.10+ comment
+vmap <C-/> gc
+vmap <C-_> gc
+
